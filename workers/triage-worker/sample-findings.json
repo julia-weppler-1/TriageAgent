@@ -1,0 +1,6 @@
+[
+  { "id": "f1", "severity": "HIGH", "rule": "eval-user-input", "file": "server.js", "line": 12, "message": "eval() called with req.query.input" },
+  { "id": "f2", "severity": "HIGH", "rule": "sql-string-concat", "file": "db.js", "line": 22, "message": "SQL query built by concatenating req.body.name" },
+  { "id": "f3", "severity": "MEDIUM", "rule": "insecure-random", "file": "auth.js", "line": 40, "message": "Math.random() used to generate a session token" },
+  { "id": "f4", "severity": "LOW", "rule": "log-pii", "file": "test/helpers.js", "line": 5, "message": "console.log of a user email" }
+]
