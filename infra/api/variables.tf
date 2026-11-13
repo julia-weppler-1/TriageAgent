@@ -15,3 +15,9 @@ variable "data_retention_days" {
   type        = number
   default     = 90
 }
+
+variable "allowed_targets" {
+  description = "Comma separated URL prefixes that pentest scans are allowed to hit"
+  type        = string
+  default     = "http://test-target:4000/"
+}

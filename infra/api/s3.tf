@@ -1,10 +1,12 @@
 # bucket for scan inputs and reports
-resource "aws_s3_bucket" "scan_data" {
-  bucket = "${var.name_prefix}-scan-data-${var.bucket_suffix}"
+# the bucket itself is created outside terraform because learner lab blocks a read
+# the aws provider does after creating a bucket. terraform manages the settings
+locals {
+  scan_data_bucket = "${var.name_prefix}-scan-data-${var.bucket_suffix}"
 }
 
 resource "aws_s3_bucket_public_access_block" "scan_data" {
-  bucket = aws_s3_bucket.scan_data.id
+  bucket = local.scan_data_bucket
 
   block_public_acls       = true
   ignore_public_acls      = true
@@ -13,7 +15,7 @@ resource "aws_s3_bucket_public_access_block" "scan_data" {
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "scan_data" {
-  bucket = aws_s3_bucket.scan_data.id
+  bucket = local.scan_data_bucket
 
   rule {
     id     = "expire-scan-data"

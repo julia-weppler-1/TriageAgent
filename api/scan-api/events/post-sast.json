@@ -1,0 +1,5 @@
+{
+  "httpMethod": "POST",
+  "resource": "/scans",
+  "body": "{\"type\":\"SAST\",\"code\":\"const password = \\\"admin123\\\";\"}"
+}
