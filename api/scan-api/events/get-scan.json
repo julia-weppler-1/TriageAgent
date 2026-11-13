@@ -1,0 +1,5 @@
+{
+  "httpMethod": "GET",
+  "resource": "/scans/{scanId}",
+  "pathParameters": { "scanId": "PASTE_SCAN_ID_HERE" }
+}

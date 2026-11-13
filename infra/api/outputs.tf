@@ -9,11 +9,11 @@ output "scans_table_arn" {
 }
 
 output "scan_data_bucket_name" {
-  value = aws_s3_bucket.scan_data.bucket
+  value = local.scan_data_bucket
 }
 
 output "scan_data_bucket_arn" {
-  value = aws_s3_bucket.scan_data.arn
+  value = "arn:aws:s3:::${local.scan_data_bucket}"
 }
 
 output "scan_queue_url" {
@@ -38,4 +38,8 @@ output "triage_queue_arn" {
 
 output "triage_dlq_url" {
   value = aws_sqs_queue.triage_jobs_dlq.url
+}
+
+output "scan_api_function_name" {
+  value = aws_lambda_function.scan_api.function_name
 }
