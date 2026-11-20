@@ -44,6 +44,7 @@ export default function App() {
   return (
     <main style={{ maxWidth: 700, margin: "0 auto", padding: 16, fontFamily: "sans-serif" }}>
       <h1>TriageAgent</h1>
+      <h2>Demo 1 - Julia Weppler</h2>
       {USING_MOCK && <p>Demo mode: using a fake API.</p>}
 
       <form onSubmit={submit}>
